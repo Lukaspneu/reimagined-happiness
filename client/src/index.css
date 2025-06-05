@@ -27,3 +27,19 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+@keyframes rocket-fly {
+  from {
+    transform: translate(-10vw, 60vh);
+  }
+  to {
+    transform: translate(110vw, -20vh);
+  }
+}
+
+.rocket {
+  position: absolute;
+  font-size: 3rem;
+  animation: rocket-fly 2s linear infinite;
+  pointer-events: none;
+}

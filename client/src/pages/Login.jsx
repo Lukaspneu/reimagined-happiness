@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from "../api";
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
@@ -9,10 +8,9 @@ export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const res = await api.post('/api/auth/login', { email, password });
-    login(res.data.token);
+    login('demo-token');
     navigate('/');
   };
 
@@ -23,11 +21,12 @@ export default function Login() {
   }));
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 animate-gradient-x overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       <div className="absolute inset-0" aria-hidden="true">
         {stars.map((s, i) => (
           <div key={i} className="star" style={s} />
         ))}
+        <div className="rocket">🚀</div>
       </div>
       <form onSubmit={handleSubmit} className="relative bg-white dark:bg-gray-800 p-8 rounded shadow-md w-80">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-800 dark:text-white">Zenet AI Login</h1>
