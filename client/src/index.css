@@ -9,37 +9,3 @@
   background-size: 200% 200%;
   animation: gradient-x 8s ease infinite;
 }
-
-@keyframes star-move {
-  from { transform: translateY(0); }
-  to { transform: translateY(-110vh); }
-}
-
-.star {
-  position: absolute;
-  top: 100%;
-  width: 2px;
-  height: 2px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(255,255,255,0.8);
-  animation-name: star-move;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes rocket-fly {
-  from {
-    transform: translate(-10vw, 60vh);
-  }
-  to {
-    transform: translate(110vw, -20vh);
-  }
-}
-
-.rocket {
-  position: absolute;
-  font-size: 3rem;
-  animation: rocket-fly 2s linear infinite;
-  pointer-events: none;
-}
